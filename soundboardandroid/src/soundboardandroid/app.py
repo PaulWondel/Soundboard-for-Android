@@ -4,6 +4,7 @@ My first application
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+from playsound import playsound
 
 
 class Soundboardforandroid(toga.App):
@@ -33,9 +34,17 @@ class Soundboardforandroid(toga.App):
             on_press=self.say_hello,
             style=Pack(padding=5)
         )
+        
+        # Doesn't work yet, gives an weird error
+        # sound_button = toga.Button(
+        #     'Sound Test',
+        #     on_press=self.play_track,
+        #     style=Pack(padding=5)
+        # )
 
         main_box.add(name_box)
         main_box.add(button)
+        # main_box.add(sound_button)
 
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
@@ -49,8 +58,12 @@ class Soundboardforandroid(toga.App):
 
         self.main_window.info_dialog(
             'Response',
-            "Hello, {}. You're looking stunning today.".format(name)
+            "Hello, {}.\nYou're looking stunning today.".format(name)
         )
+    
+    # Doesn't work yet, gives an weird error
+    # def play_track(self, widget):
+    #     playsound('sounds/1.mp3')
 
 
 def main():
