@@ -1,4 +1,5 @@
 beeware-venv
+apk_installer
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
