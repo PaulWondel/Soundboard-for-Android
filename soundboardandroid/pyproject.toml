@@ -1,0 +1,49 @@
+[tool.briefcase]
+project_name = "Soundboard for android"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/soundboardandroid"
+license = "MIT license"
+author = 'Paul Wondel'
+author_email = "p.r.wondel@gmail.com"
+
+[tool.briefcase.app.soundboardandroid]
+formal_name = "Soundboard for android"
+description = "My first application"
+icon = "src/soundboardandroid/resources/soundboardandroid"
+sources = ['src/soundboardandroid']
+requires = []
+
+
+[tool.briefcase.app.soundboardandroid.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.soundboardandroid.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev20',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.soundboardandroid.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev20',
+]
+
+# Mobile deployments
+[tool.briefcase.app.soundboardandroid.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.soundboardandroid.android]
+requires = [
+    'toga-android>=0.3.0.dev20',
+]
